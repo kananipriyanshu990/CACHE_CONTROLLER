@@ -1,4 +1,4 @@
-# 4KB Write-Back Cache Controller with OpenRAM SRAM Macros
+# 4KB Cache Controller with SRAM Macros
 
 ## Overview
 
@@ -29,3 +29,55 @@ The complete design was taken through RTL development, verification, synthesis, 
 | Individual SRAM                | 256 × 32-bit              |
 | SRAM generator                 | OpenRAM                   |
 | Technology                     | FreePDK45  Nangate45 flow |
+
+---
+
+# RTL Module Description
+
+## 1. Address Decoder
+
+### Function
+
+Converts the CPU address into cache-access parameters.
+
+### Outputs
+
+- Tag
+- Index
+- Word Offset
+
+---
+
+# 2. Cache Memory
+
+The cache memory module implements the actual storage array.
+
+It contains:
+
+- Data array
+- Tag array
+- Valid bits
+- Dirty bits
+
+### Responsibilities
+
+- Provide cache data during reads
+- Store refill data
+- Update metadata
+- Provide current cache line information to controller
+
+---
+
+# 3. Cache Controller
+
+The controller is the decision-making unit of the cache.
+
+It is implemented using a finite state machine.
+
+### Responsibilities
+
+- Detect cache hits and misses
+- Decide between refill and writeback
+- Generate cache update signals
+- Generate memory requests
+- Manage transaction completion
