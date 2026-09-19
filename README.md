@@ -81,3 +81,11 @@ It is implemented using a finite state machine.
 - Generate cache update signals
 - Generate memory requests
 - Manage transaction completion
+
+---
+
+# Tools Used
+- Xilinx Vivado for RTL design & Simulation
+- Yosys for Netlist synthesis
+- Openroad for Physical design
+- Klayout Visual inspection of Design
