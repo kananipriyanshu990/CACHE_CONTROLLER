@@ -88,4 +88,5 @@ It is implemented using a finite state machine.
 - Xilinx Vivado for RTL design & Simulation
 - Yosys for Netlist synthesis
 - Openroad for Physical design
+- OpenRAM for SRAM macro generation
 - Klayout Visual inspection of Design
